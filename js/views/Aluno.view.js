@@ -22,12 +22,32 @@ class AlunoView {
     }
 
     render(alunos) {
+        this.tableBody.innerHTML = ''
         alunos.forEach(aluno => {
             let htmlrow = document.createElement('tr')
             htmlrow.innerHTML = `<td>${aluno.nome}</td>`
+            let encontrado = false
             this.materias.forEach(materia => {
-                htmlrow.innerHTML += `<td>${aluno.media[materia]}</td>`
+                if (materia in aluno.media) {
+                    encontrado = true
+                }
             })
+
+            if (encontrado) {
+                this.materias.forEach(materia => {
+                    htmlrow.innerHTML += `<td>
+                    ${aluno.media[materia] !== undefined ? aluno.media[materia] :
+                        `<a href="edit.html?id=${aluno._id}">Incluir Nota</a>`}
+                        </td>`
+                })
+            } else {
+                htmlrow.innerHTML += `<td colspan="${this.materias.length}">
+                    <a href="edit.html?id=${aluno._id}">
+                        Incluir Notas
+                    </a>
+                </td>`
+            }
+
             this.tableBody.appendChild(htmlrow)
         })
     }

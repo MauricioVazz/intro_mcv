@@ -22,8 +22,8 @@ const alunos = [
       notas: {
         backend_1: [10, 10, 8, 10],
         frontend_2: [7, 8, 8 , 7],
-        bancodados: [8, 7, 7, 9],
-        ferramentas: [8, 9, 7, 7],
+        bancodados: [8, 7, 10, 9],
+        ferramentas: [8, 9, 7, 8],
       },
     },
 ];
@@ -36,3 +36,9 @@ alunos.forEach(aluno => {
 
 const alunoView = new AlunoView(document.querySelector('[data-table-alunos]'))
 const alunoController = new AlunoController(alunoService, alunoView)
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault()
+    const nome = document.querySelector('#first_name').value
+    alunoController.add({ nome })
+})
