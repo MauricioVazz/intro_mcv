@@ -3,7 +3,7 @@ class EditAlunoController {
 		this.aluno = aluno
 		this.view = view
 		this.service = service
-		this.view.render(model)
+		this.view.render(aluno)
 	}
 
 	update(id, nome, notas) {

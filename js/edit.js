@@ -35,6 +35,6 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
 		}
 	})
-	editAlunoController.update(id, nome, notas)
+	editAlunoController.update(alunoId, nome, notas)
 	window.location.href = "index.html"
 })

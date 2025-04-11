@@ -18,7 +18,8 @@ class AlunoService {
 		}
 		let index = this.alunos.findIndex(a => a._id === aluno._id)
 		if (index !== -1) {
-			
+			this.alunos[index] = aluno
+			this.updateLocalStorage()
 		}
 	}
 
