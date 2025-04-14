@@ -1,7 +1,7 @@
 // calcular a soma de um conjunto de números
 // a função sum recebe um número variável de argumentos
 // e usa o objeto arguments para acessar os argumentos passados
-function sum() {
+export function sum() {
     // O objeto arguments é uma variável local disponível dentro de todas as funções JavaScript.
     // Você pode se referir a ele para obter todos os argumentos passados para uma função.
     // O objeto arguments é semelhante a um array, mas não possui métodos de array.
@@ -18,7 +18,7 @@ function sum() {
 // a função average recebe um número variável de argumentos
 // e chama a função sum para somar todos os números
 // e depois divide o resultado pelo número de argumentos
-function average() {
+export function average() {
     return sum(...arguments) / arguments.length
 }
 

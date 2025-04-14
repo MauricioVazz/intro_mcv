@@ -1,4 +1,6 @@
-class EditAlunoController {
+import { AlunoModel } from "../models/Aluno.model.js"
+
+export class EditAlunoController {
 	constructor(aluno, view, service) {
 		this.aluno = aluno
 		this.view = view

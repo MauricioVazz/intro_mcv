@@ -1,4 +1,6 @@
-class AlunoModel {
+import { average } from "../calc.js"
+
+export class AlunoModel {
 	constructor({ nome, _id, notas } = { notas: {} }) {
 		this.nome = nome
 		this._id = _id !== undefined ? _id : this.generateId()

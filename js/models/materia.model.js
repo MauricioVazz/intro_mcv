@@ -1,4 +1,4 @@
-class MateriaModel {
+export class MateriaModel {
 	constructor({ nome, _id }) {
 		this.nome = nome
 		this._id = _id !== undefined ? _id : this.generateId()
